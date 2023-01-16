@@ -16,19 +16,7 @@ spec:
             cidr: 192.168.0.0/16
         - namespaceSelector:
             matchLabels:
-              name: apps-prod
-        - namespaceSelector:
-            matchLabels:
-              name: apps-dev
-        - namespaceSelector:
-            matchLabels:
-              name: infra-prod
-        - namespaceSelector:
-            matchLabels:
-              name: infra-dev
-        - namespaceSelector:
-            matchLabels:
-              name: prometheus
+              mongoAccess: "true"
       ports:
         - protocol: TCP
           port: 27017
