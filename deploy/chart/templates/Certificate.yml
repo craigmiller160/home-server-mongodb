@@ -13,9 +13,18 @@ spec:
   isCA: true
   commonName: {{ .Values.certificate.name }}
   secretName: {{ .Values.certificate.name }}
+  subject:
+    organizations:
+      - "Craig Miller"
+    organizationalUnits:
+      - MongoDB
+    countries:
+      - US
+    states:
+      - FL
   dnsNames:
-    - craigmiller160.ddns.net
-    - localhost
+    - craigmiller160.us
+    - craigpc
   privateKey:
     algorithm: ECDSA
     size: 256
