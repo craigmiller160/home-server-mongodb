@@ -25,6 +25,7 @@ spec:
   dnsNames:
     - craigmiller160.us
     - craigpc
+    - mongodb.infra-prod
   privateKey:
     algorithm: ECDSA
     size: 256
