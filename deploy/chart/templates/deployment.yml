@@ -16,6 +16,7 @@ metadata:
   name: {{ .Values.deployment.name }}
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   strategy:
     type: Recreate
   selector:
@@ -58,6 +59,8 @@ spec:
               name: {{ .Values.deployment.volumeNames.certsVolume }}
             - mountPath: /data/db
               name: {{ .Values.deployment.volumeNames.dataVolume }}
+            - mountPath: /certs-secret
+              name: {{ .Values.deployment.volumeNames.certsSecretVolume }}
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
